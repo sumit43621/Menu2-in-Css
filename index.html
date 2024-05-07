@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Menu2</title>
     <style>
         .p0{
@@ -12,6 +13,8 @@
             margin: 0px;
             background: #bdcbe5;
             font-family: Arial, Helvetica, sans-serif;
+            background-image: url("./img/bg.jpg");
+            background-size: contain;
         }
         header{
             height: 300px;
@@ -29,21 +32,19 @@
             border: 1px dashed green;
         }
         header > nav{
-            height: 68px;
+            height: 54px;
             width: 80%;
             background: #fff;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
+            clear: both;
         }
         header h1{
             margin-top: 87px;
             color: #333;
             text-shadow: 0px 1px 1px #fff;
             text-align: center;
-        }
-        header > nav > ul{
-            list-style: none;
         }
         header > nav > ul > li{
             float: left;
@@ -53,26 +54,72 @@
             text-decoration: none;
             color: #a6a6a6;
             display: block;
-            padding: 25px;
+            padding: 18px 25px;
             border-right: 1px solid #d9d9d9;
         }
         .menu > li:hover > a{
             padding-bottom: 32px;
             background: #fff;
         }
-        .menu > li:hover .submenu{
+        li:hover > .submenu{
             display: block;
         }
         .submenu{
             display: none;
             width: 294px;
-            height: 335px;
             background: #fff;
             position: absolute;
-            top: 75px;
+            top: 62px;
             left: 0px;
             border-radius: 10px;
             border-top-left-radius: 0px;
+        }
+        .menu > li:nth-child(3) > a::after{
+            content: "▼";
+        }
+        .active{
+            color: #2B82D9;
+        }
+        .s_left{
+            float: left;
+        }
+        .s_right{
+            float: right;
+        }
+        .m0{
+            margin: 0px;
+        }
+        .submenu > li > a{
+            display: block;
+            padding: 25px;
+            border-bottom: 1px solid #d9d9d9;
+            text-decoration: none;
+            color: #a6a6a6;
+        }
+        ul{
+            list-style: none;
+        }
+        .s_fr{
+            float: right;
+        }
+        .s_posiabso{
+            position: absolute;
+        }
+        .s_t0{
+            top: 0px;
+        }
+        .s_l0{
+            left: 0px;
+        }
+        .s_r0{
+            right: 0px;
+        }
+        .submenu2{
+            position: absolute;
+            left: 265px;
+            top: 36px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
   </head>
@@ -80,16 +127,42 @@
     <header>
         <h1>Pure CSS3 Mega Menu</h1>
         <nav>
-            <ul class="p0 menu">
+            <ul class="p0 menu s_left m0">
                 <li>
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                    <ul class="submenu"></ul>
+                    <a class="active" href="#"><i class="fa-solid fa-star"></i> About</a>
+                    <ul class="submenu p0">
+                        <li>
+                            <a href="#">News <i class="fa-solid fa-chevron-down s_fr"></i></a>
+                            <ul class="p0 submenu submenu2 s_posiabso">
+                                <li>
+                                    <a href="#">Company</a>
+                                </li>
+                                <li>
+                                    <a href="#">Product</a>
+                                </li>
+                                <li>
+                                    <a href="#">Special</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-phone"></i> Contacts</a>
+                </li>
+            </ul>
+            <ul class="p0 menu s_right m0">
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Share</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-thumbtack"></i> Pin/Unpin</a>
                 </li>
             </ul>
         </nav>
